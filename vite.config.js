@@ -12,7 +12,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, "index.html"),
-        addToCart: resolve(__dirname, "addtocart.html"),
+        addtocart: resolve(__dirname, "addtocart.html"),
         contact: resolve(__dirname, "contact.html"), // ✅ Now relative
         // Add other pages here if needed
       },
