@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Contact Section</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+    .sigining{
+  padding: 1vw;
+  
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.855);
+}
+
+.sign{
+
+  /* padding: 0.8vw; */
+  width: 6vw;
+  height: 3vw;
+  background-color: chartreuse;
+  color:brown;
+}
+
+    .container2 {
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 30px;
+      font-size: x-large;
+    }
+    .container2>h2{
+      width: 100%;
+      margin-left: 9vw;
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .contact-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      width: 100%;
+     margin-left: 10vw;
+    }
+
+    .contact-form {
+      flex: 1;
+      min-width: 300px;
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-form label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #555;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 2rem;
+    }
+
+    .contact-form textarea {
+      resize: none;
+    }
+
+    .contact-form button {
+      background-color: #007BFF;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      font-size: 1rem;
+      font-size: 2vw;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .contact-form button:hover {
+    
+      background-color: #0056b3;
+    }
+
+    .map-container {
+      flex: 1;
+      min-width: 300px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    @media (max-width: 768px) {
+      .contact-section {
+        flex-direction: column;
+      }
+
+      .contact-form,
+      .map-container {
+        margin-bottom: 20px;
+      }
+    }
+
+
+    
+  .container{
+    
+    width: 100%;
+    /* height: 30vh; */
+    padding: 0vw;
+  }
+
+  .container2 {
+      max-width: 1200px;
+      margin: 0;
+      padding: 0px;
+    }
+  .sigining{
+    padding: 1vw;
+    
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.855);
+  }
+  
+  .sign{
+  
+    padding: 0.6vw;
+    font-size: larger;
+    background-color: chartreuse;
+    color:brown;
+  }
+  
+  .header-text{
+       font-size: 1.5vw;
+       color: white;
+  }
+  
+  .nav-bar{
+    display: flex;
+    justify-content: space-between;
+  }
+  .nav-logo{
+    width: 20vw;
+    height: 10vh;
+  }
+  
+  .nav-links{
+    display: flex;
+    gap: 4vw;
+    font-size: 3vh;
+    padding: 1vw 3vh;
+  }
+  .nav-links a{
+    text-decoration: none;
+  }
+  .menu-bar{
+    display: none;
+  }
+
+  @media (max-width:1280px) {
+  .container{
+  
+    width: 100%;
+    height: 30vh;
+    padding: 0vw;
+  }
+  .header-text{
+    padding-top: 1.2vw;
+    font-size: 3vw;
+    width: 65%;
+
+  }
+  .sigining{
+    padding: 3vw;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.855);
+    
+  }
+  
+  .sign{
+  
+    padding: 1vw;
+    font-size: 3vw;
+    background-color: chartreuse;
+    color:brown;
+  }
+  .nav-links > a{
+    display: none;
+  }
+  .menu-bar{
+    display: inline-block;
+  }
+  .fa-bars,.fa-cart-shopping{
+      padding: 3vw;
+      
+  }
+  .cart{
+    display: flex;
+    justify-content:space-between;
+  }
+  .nav-logo{
+    width: 45vw;
+    height: auto;
+    
+  }
+  .logo-container{
+    padding-top: 1vw;
+    padding-left: 3vw;
+  };
+  .fa-solid{
+    font-size: 3vw;
+  }
+  .search-continer{
+    display: flex;
+    width: 100%;
+    height: 6vw;
+    padding: 2vw 4vw;
+  }
+  .search-container{
+    display: flex;
+    width: 100%;
+    height: 6vw;
+    padding: 2vw 4vw;
+  }
+
+  .fa-magnifying-glass{
+    margin: 2vw;
+  }
+
+  #search-bar{
+    border: none;
+  }
+  .search-continer{
+    
+    height: 12vw;
+    border: 2px solid black;
+  }
+  #search-holder{
+    padding: 3vw;
+  }
+
+ 
+}
+
+  @media (max-width:480px) { 
+  .container{
+  
+  width: 100%;
+  height: 30vh;
+  padding: 0vw;
+}
+.header-text{
+  padding-top: 1.2vw;
+  font-size: 6vw;
+  width: 100%;
+}
+.sigining{
+  padding: 3vw;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.855);
+  
+}
+   .sign{
+    display: none;
+   }
+   .container2 {
+      max-width: 1200px;
+      margin:0;
+      padding: 0;
+      font-size: x-large;
+    }
+    .container2>h2{
+      width: 100%;
+      margin-left:0;
+    }
+    .contact-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      width: 100%;
+     margin-left: 0vw;
+    }
+    
+    .contact-form button {
+      background-color: #007BFF;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      font-size: 1rem;
+      font-size: 5vw;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+    }
+  }
+  button{
+    height: 8vh;
+   
+  }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <div class="sigining">
+        <h1 class="header-text">
+          Free shipping, 30-day return or refund guarantee.
+        </h1>
+        <div>
+          <button class="sign sign-in" style="  font-size:medium;">
+            Sign IN
+          </button>
+          <button class="sign sign-up" style="font-size:medium;">
+            Sign UP
+          </button>
+        </div>
+      </div>
+
+      <div class="nav-bar">
+        <div class="logo-container">
+          <!-- <img src="public/images/brand_logo.jpg" style="padding-top: 5px;border-radius: 47%;" class="nav-logo"> -->
+        </div>
+        <div class="nav-links">
+
+          <a href="index.html">Home</a>
+          <a href="index.html#contact">About</a>
+          <a href="index.html#productsection">Products</a>
+          <a href="contact.html">Contact</a>
+          
+          <div class="cart">
+            <a href="/addToCart.html" class="cart-logo">
+              <i class="fa-solid fa-cart-shopping"><span id="number-of-product-in-cart">0</span></i>
+            </a>
+            <a href="#" class="menu-bar">
+              <i class="fa-solid fa-bars"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+</div>
+</header>
+
+  <div class="container container2">
+    <h2>Contact Us</h2>
+    <div class="contact-section">
+      <div class="contact-form">
+        <form action="#">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your name" required>
+          
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required>
+          
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" placeholder="Enter the subject" required>
+          
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Enter your message" required></textarea>
+          
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+      <div class="map-container">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.2613173278896!2d73.91411937501422!3d18.562253982539413!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c147b8b3a3bf%3A0x6f7fdcc8e4d6c77e!2sPhoenix%20Marketcity%20Pune!5e0!3m2!1sen!2sin!4v1696124215167!5m2!1sen!2sin"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

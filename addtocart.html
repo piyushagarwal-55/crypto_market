@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="src/styleaddtocart.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <title>Add To Cart</title>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="sigining">
+        <h1 class="header-text">
+          Free shipping, 30-day return or refund guarantee.
+        </h1>
+        <div>
+          <button class="sign sign-in">Sign IN</button>
+          <button class="sign sign-up">Sign UP</button>
+        </div>
+      </div>
+
+      <div class="nav-bar">
+        <div class="logo-container"></div>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="#contact">About</a>
+          <a href="index.html#productsection">Products</a>
+          <a href="contact.html">Contact</a>
+          <div class="cart">
+            <a href="/addToCart.html" class="cart-logo">
+              <i class="fa-solid fa-cart-shopping"><span id="number-of-product-in-cart">0</span></i>
+            </a>
+            <a href="#" class="menu-bar">
+              <i class="fa-solid fa-bars"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="addToCartElement">
+    <div class="container">
+      <section>
+        <div id="productCartContainer"></div>
+      </section>
+
+      <section class="productCartTotalElem">
+        <div class="productCartTotalElement">
+          <p>Selected Offer Summary</p>
+          <div class="productOrderTotal">
+            <div>
+              <p>Sub Total:</p>
+              <p class="productSubTotal">0</p>
+            </div>
+            <div>
+              <p>Tax:</p>
+              <p class="productTax">₹0</p>
+            </div>
+            <hr />
+            <div>
+              <p>Final Total:</p>
+              <p class="productFinalTotal">0</p>
+            </div>
+            <div style="text-align: center; margin-top: 20px;">
+              <button
+                id="purchaseBtn"
+                style="
+                  padding: 12px 24px;
+                  font-size: 16px;
+                  background-color: #4CAF50;
+                  color: white;
+                  border: none;
+                  border-radius: 8px;
+                  cursor: pointer;
+                  transition: background-color 0.3s;
+                "
+                onmouseover="this.style.backgroundColor='#45a049'"
+                onmouseout="this.style.backgroundColor='#4CAF50'"
+              >
+                Purchase Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <!-- Template for cart items -->
+  <template id="productCartTemplate">
+    <div class="cards" id="cardValue">
+      <article class="information [ card ]">
+        <div class="cart-container-name-image">
+          <div><span class="category"></span></div>
+          <div class="imageContainer"><img class="productImage" src="" alt="" /></div>
+          <h2 class="productName"></h2>
+        </div>
+
+        <div class="stockElement">
+          <p class="productPrice" style="font-size: larger;"></p>
+          <div>
+            <button class="cartIncrement">+</button>
+            <p class="productQuantity" data-quantity="1">1</p>
+            <button class="cartDecrement">-</button>
+          </div>
+        </div>
+
+        <button class="add-to-cart-button remove-to-cart-button">Remove</button>
+      </article>
+    </div>
+  </template>
+
+  <footer>
+    <div class="container">
+      <section class="footer-content">
+        <div class="main-footer" id="contact">
+          <div class="footer-divisions footer1">
+            <div class="footer-logo-div1"></div>
+            <div class="footer-div1">
+              <h1>Welcome to Crypto Market, your ultimate destination for cutting-edge gadgets!</h1>
+            </div>
+          </div>
+          <div class="footer-divisions">
+            <h2 class="footer-div-2">SHOPPING</h2>
+            <h2 class="footer-div-2">Computer Store</h2>
+            <h2 class="footer-div-2">Laptop Store</h2>
+            <h2 class="footer-div-2">Accessories</h2>
+            <h2 class="footer-div-2">Sales & Discount</h2>
+          </div>
+          <div class="footer-divisions">
+            <h2 class="footer-div-3">Experience</h2>
+            <h2 class="footer-div-3">Contact Us</h2>
+            <h2 class="footer-div-3">Payment Method</h2>
+            <h2 class="footer-div-3">Delivery</h2>
+            <h2 class="footer-div-3">Return and Exchange</h2>
+          </div>
+          <div class="footer-divisions footer-div-4-4">
+            <h2 class="footer-div-4">Newsletter</h2>
+            <h2 class="footer-div-4">Be the first to know about new arrivals, sales & promos!</h2>
+            <input type="email" class="footer-div-4" placeholder="Enter Your Email" />
+          </div>
+        </div>
+      </section>
+      <div class="mainfooter company-footer">
+        <h1>Shop from Crypto Market</h1>
+      </div>
+    </div>
+  </footer>
+
+
+  <script type="module" src="src/showcartproduct.js"></script>
+
+
+  <script>
+    const contractAddress = "0x8d1b41dd27F2e029B3a732C3B1c6a0f0D303B937"; 
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const purchaseBtn = document.getElementById("purchaseBtn");
+
+      purchaseBtn.addEventListener("click", async () => {
+        if (typeof window.ethereum === "undefined") {
+          alert("Please install MetaMask to proceed with the purchase.");
+          return;
+        }
+
+        try {
+          const [account] = await window.ethereum.request({ method: "eth_requestAccounts" });
+
+          const ethAmount = "0.00000001"; 
+
+          const tx = await window.ethereum.request({
+            method: "eth_sendTransaction",
+            params: [
+              {
+                from: account,
+                to: contractAddress,
+                value: (BigInt(parseFloat(ethAmount) * 1e18)).toString(), 
+              },
+            ],
+          });
+
+          alert(`✅ Payment Successful!\nTransaction Hash:\n${tx}`);
+        } catch (error) {
+          console.error("Transaction failed", error);
+          alert("❌ Transaction failed or rejected.");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
