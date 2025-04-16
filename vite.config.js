@@ -11,10 +11,10 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main: resolve(__dirname, "index.html"), // Correct entry point
+        main: resolve(__dirname, "index.html"),
         addToCart: resolve(__dirname, "addtocart.html"),
-        contact: resolve("C:/Users/pooja/OneDrive/Desktop/ecommerce_project/contact.html"),
-        // Add other HTML files here as needed
+        contact: resolve(__dirname, "contact.html"), // ✅ Now relative
+        // Add other pages here if needed
       },
     },
   },

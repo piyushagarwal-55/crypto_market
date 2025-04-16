@@ -1,5 +1,5 @@
-import { getCartProductFromLS } from "./getCartProduct";
-import { updateCartProductTotal } from "./updateCartProductTotal";
+import { getCartProductFromLS } from "./getCartProduct.js";
+import { updateCartProductTotal } from "./updateCartProductTotal.js";
 
 
 export const incrementDecrement = (event, id, stock, price) => {

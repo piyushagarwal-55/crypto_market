@@ -1,6 +1,6 @@
-import { getCartProductFromLS } from "./getCartProduct";
-import { cartcountupdate} from "./cartcountupdate";
-import { showToast } from "./showToast";
+import { getCartProductFromLS } from "./getCartProduct.js";
+import { cartcountupdate} from "./cartcountupdate.js";
+import { showToast } from "./showToast.js";
 
 
 getCartProductFromLS();
